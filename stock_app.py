@@ -172,10 +172,11 @@ if market_cap_min is not None:
 if market_cap_max is not None:
     df_group = df_group[df_group['marketCap'] <= market_cap_max]
 
-if std_min is not None:
-    df_group = df_group[df_group['std_rel'] >= std_min]
-if std_max is not None:
-    df_group = df_group[df_group['std_rel'] <= std_max]
+# if std_min is not None:
+#     df_group = df_group[df_group['std_rel'] >= std_min]
+# if std_max is not None:
+#     df_group = df_group[df_group['std_rel'] <= std_max]
+
 
 if country == "кроме Китая":
     df_group = df_group[df_group['country'] == 0]
@@ -187,6 +188,11 @@ if volume is not None:
 
 # Обновление условия фильтрации для df
 filter_condition_df &= df['symbol'].isin(list(df_group.index))
+
+if std_min is not None:
+    filter_condition_df &= df['std_rel'] >= std_min
+if std_max is not None:
+    filter_condition_df &= df['std_rel'] <= std_max
 
 # Применение фильтров второго уровня для df
 if ps_min is not None:
