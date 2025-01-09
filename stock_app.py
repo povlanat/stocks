@@ -3,9 +3,11 @@ import pandas as pd
 import numpy as np
 import datetime
 
+
+st.set_page_config(layout="wide")
+
 d = pd.read_csv('app_stock/1.csv')
 d
-st.set_page_config(layout="wide")
 
 @st.cache_data
 def load_data_1():
