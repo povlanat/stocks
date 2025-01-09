@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import datetime
 
-d = df.read_csv('1.csv')
+d = pd.read_csv('1.csv')
 d
 st.set_page_config(layout="wide")
 
