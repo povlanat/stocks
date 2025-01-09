@@ -3,8 +3,8 @@ import pandas as pd
 import numpy as np
 import datetime
 
-d = pd.read_csv('1.csv')
-d
+# d = pd.read_csv('1.csv')
+# d
 st.set_page_config(layout="wide")
 
 @st.cache_data
